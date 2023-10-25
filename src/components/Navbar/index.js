@@ -7,10 +7,9 @@ import { Close, CloseRounded } from '@mui/icons-material';
 import { useTheme } from 'styled-components';
 import ThemeToggle from '../ThemeToggle/ThemeToggle.jsx'; // Import the ThemeToggle component
 
-const Navbar = () => {
+const Navbar = ({darkMode, setDarkMode}) => {
   const [isOpen, setIsOpen] = useState(false);
   const theme = useTheme();
-  const [darkMode, setDarkMode] = useState(true);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -20,7 +19,7 @@ const Navbar = () => {
     <Nav>
       <NavbarContainer>
         <NavLogo to='/'>
-          <a style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer' }}>
+          <a style={darkMode ? { display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer' } : { display: "flex", alignItems: "center", color: "black", marginBottom: '20;', cursor: 'pointer' }}>
             <DiCssdeck size="3rem" /> <Span>SYNA</Span>
           </a>
         </NavLogo>

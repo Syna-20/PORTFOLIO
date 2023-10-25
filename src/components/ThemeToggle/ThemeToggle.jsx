@@ -15,7 +15,9 @@ const ThemeToggle = ({ darkMode, toggleDarkMode }) => {
         margin: '0 10px',
       }}
     >
-      {darkMode ? <IoIosSunny /> : <IoIosMoon/>}
+      {darkMode ? <IoIosSunny /> : <IoIosMoon style={{
+        color: 'black'
+      }}/>}
     </button>
   );
 };
